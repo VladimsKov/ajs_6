@@ -1,6 +1,6 @@
 // TODO: write your code here
-/*
-import sortHeroes, { newHeroes } from './basic';
 
-console.log(sortHeroes(newHeroes));
-*/
+import orderByProps from './basic';
+import obj from './characters';
+
+orderByProps(obj, ['name', 'defence']);

@@ -1,13 +1,22 @@
-/*
-mport sortHeroes, { newHeroes } from '../basic';
+import orderByProps from '../basic';
+import obj from '../characters';
 
-const res = sortHeroes(newHeroes);
-test('matching of equality', () => {
-  expect(res).toEqual(newHeroes);
+test('orderByProps: count of params < count of props', () => {
+  expect(orderByProps(obj, ['name', 'level'])).toEqual([
+    { name: 'мечник' },
+    { level: 2 },
+    { attack: 80 },
+    { defence: 40 },
+    { health: 10 },
+  ]);
 });
 
-test('matching of order', () => {
-  expect(res[0].health).toBeLessThan(res[1].health);
-  expect(res[1].health).toBeLessThan(res[2].health);
+test('orderByProps: count of params = count of props', () => {
+  expect(orderByProps(obj, ['defence', 'name', 'health', 'level', 'attack'])).toEqual([
+    { defence: 40 },
+    { name: 'мечник' },
+    { health: 10 },
+    { level: 2 },
+    { attack: 80 },
+  ]);
 });
-*/
